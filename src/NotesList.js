@@ -24,7 +24,6 @@ export default function NotesList({notes, className, handleSelection}) {
             // Parent styles may take precedence, which
             // goes against per-component styling.
     return (
-
     <ul className={`${styles.list} ${className}`}>
         {items}
     </ul>
