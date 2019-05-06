@@ -1,21 +1,43 @@
-import React from 'react'
+import React from 'react';
 import NotesList from './NotesList';
 import NotesDetail from './NotesDetail';
+import styles from './NotesApp.modules.css';
 
-export default class NotesApp extends React.component{
-    constructor(props){
+export default class NotesApp extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
-            notes: []
+            notes: [
+                {
+                    id:'1001',
+                    title: 'first note',
+                    text: 'this is the first note'
+                },
+                {
+                    id:'1002',
+                    title: 'second note',
+                    text: 'this is the second note'
+                },
+                {
+                    id:'1003',
+                    title: 'third note',
+                    text: 'this is the third note'
+                }
+
+            ]
         }
     }
-    
+
     render() {
-    return (
-    <div>
-        
-    </div>
-    )
+        return (
+            <div className={styles.app}>
+                <NotesList className={styles.list}/>
+                <NotesDetail className={styles.detail}/>
+            </div>
+        );
     }
 }
+
+
+
 
