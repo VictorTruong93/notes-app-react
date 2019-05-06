@@ -31,7 +31,7 @@ export default class NotesApp extends React.Component {
     render() {
         return (
             <div className={styles.app}>
-                <NotesList className={styles.list}/>
+                <NotesList className={styles.list} notes={this.state.notes}/>
                 <NotesDetail className={styles.detail}/>
             </div>
         );
