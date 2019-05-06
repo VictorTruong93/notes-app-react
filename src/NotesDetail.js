@@ -1,8 +1,3 @@
-
-
-
-
-
 import React from 'react'
 
 
@@ -21,10 +16,25 @@ export default class NotesDetail extends React.Component {
         super(props);
         this.state={
             isEditing: false,
-            draftText: props.text
+            draftText: props.note.text,
+            id: props.note.id
         }
     }
+    static getDerivedStateFromProps(props,state){
+        // there is no `this`
+        //so we receive props and state and arguments
 
+        // Must return an object that describes
+        // any modifications to state
+        if(props.note.id != state.id){
+            return{
+                id: props.note.id,
+                draftText: props.note.text
+            }
+        } else{
+            return null;
+        }
+    }
     render(){
         
         //declares the className and note variables
