@@ -49,6 +49,20 @@ export default class NotesApp extends React.Component {
             selectedNote: id
         })
     }
+    _updateNote=(idToUpdate,newText)=>{
+        const updatedNotes1 = this.state.notes.map(note =>{
+            if(note.id === idToUpdate){
+                //return modified version
+                return {
+                    ...note,    //Spread out all the existing key-value pairs.
+                    text:newText //overwrite JUST the text property
+                }
+            }else{ 
+                //else return a copy of note as=is
+                return {...note};
+            }
+        });
+    }
 }
 
 
